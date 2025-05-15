@@ -1,6 +1,8 @@
 import qp from "qp-color";
 import {version} from "../package.json";
 
+import Size from "./cli/size";
+
 try {
 	const args = process.argv.slice(2);
 
@@ -15,6 +17,9 @@ try {
 				break;
 			case "-v":
 				console.log(qp.yi("v" + version));
+				break;
+			case "size":
+				Size(args);
 				break;
 			default:
 				throw new Error(qp.rb("Unknown command, make sure it exists use:\n\t") + qp.yi("ima help"));

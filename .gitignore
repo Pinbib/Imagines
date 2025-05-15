@@ -3,6 +3,8 @@
 
 node_modules
 
+test
+
 dist
 bundle
 bin
