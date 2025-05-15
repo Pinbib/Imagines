@@ -5,6 +5,21 @@ import {PNG} from "pngjs";
 
 import qp from "qp-color";
 
+export function PNGSize(src: string, f: (size: number, width: number, height: number) => void): void {
+	createReadStream(src).pipe(new PNG()).on("parsed", function () {
+		const width = this.width;
+		const height = this.height;
+
+		const bitsPerChannel = 1;
+		const channelsPerPixel = 3;
+
+		const totalBits = width * height * channelsPerPixel * bitsPerChannel;
+		const totalBytes = Math.floor(totalBits / 8);
+
+		f(totalBytes, width, height);
+	});
+}
+
 export default function size(args: string[]): void {
 	let src: string = "";
 
@@ -20,18 +35,9 @@ export default function size(args: string[]): void {
 		}
 
 		if (extname(src) === ".png") {
-			createReadStream(src).pipe(new PNG()).on("parsed", function () {
-				const width = this.width;
-				const height = this.height;
-
-				const bitsPerChannel = 1;
-				const channelsPerPixel = 3;
-
-				const totalBits = width * height * channelsPerPixel * bitsPerChannel;
-				const totalBytes = Math.floor(totalBits / 8);
-
+			PNGSize(src, (size: number, width: number, height: number) => {
 				console.log(qp.gb("Image size: ") + qp.gi(width.toString() + " x " + height.toString()));
-				console.log(qp.gb("Maximum bytes for LSB (1 bit/channel): ") + qp.gi(totalBytes.toString() + " Bytes"));
+				console.log(qp.gb("Maximum bytes for LSB (1 bit/channel): ") + qp.gi(size.toString() + " Bytes"));
 			});
 		} else {
 			readFile(src, {encoding: "utf-8"}, (err, data) => {
