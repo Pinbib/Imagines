@@ -1,6 +1,7 @@
 {
   "name": "imagines",
   "author": "PinBib",
+  "version": "0.0.1",
   "scripts": {
 	"bundle": "rollup -c rollup.config.js",
 	"pkg:win": "pkg bundle/imagines.js -t node16-win -o bin/imagines",
