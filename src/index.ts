@@ -21,6 +21,8 @@ try {
 			case "size":
 				Size(args);
 				break;
+			case "read":
+				break;
 			default:
 				throw new Error(qp.rb("Unknown command, make sure it exists use:\n\t") + qp.yi("ima help"));
 		}
