@@ -1,5 +1,6 @@
 import {nodeResolve} from '@rollup/plugin-node-resolve';
 import terser from "@rollup/plugin-terser";
+import json from "@rollup/plugin-json";
 
 export default {
 	input: "dist/index.js",
@@ -8,6 +9,6 @@ export default {
 		format: "cjs",
 		plugins: [terser()]
 	},
-	external: [],
-	plugins: [nodeResolve()]
+	external: ["pngjs"],
+	plugins: [nodeResolve(), json()]
 };
