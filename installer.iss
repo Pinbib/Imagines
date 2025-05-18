@@ -16,6 +16,7 @@ SolidCompression=yes
 
 [Files]
 Source: "bin\imagines.exe"; DestName: "ima.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "LICENSE"; DestDir: "{app}"; Flags: ignoreversion
 
 
 [Dirs]
