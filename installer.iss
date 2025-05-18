@@ -1,6 +1,6 @@
 [Setup]
 AppName=Imagines
-AppVersion=0.0.1
+AppVersion=0.0.3
 DefaultDirName={pf}\Imagines
 DefaultGroupName=Imagines
 AppPublisher=PinBib

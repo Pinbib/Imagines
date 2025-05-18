@@ -13,6 +13,12 @@ try {
 	} else {
 		switch (args[0]) {
 			case "help":
+				console.log(qp.gb("IMA (Imagines) - CLI utility for writing and reading steganography from images (as well as running code that has been written in the same way)"));
+				console.log(qp.yi("\tima help") + qp.gb(" - Show this help message"));
+				console.log(qp.yi("\tima version") + qp.gb(" - Show the version of the program, alias ") + qp.yi("-v"));
+				console.log(qp.yi("\tima size <path>") + qp.gb(" - Show the size of the image and the maximum bytes for LSB (1 bit/channel)"));
+				console.log(qp.yi("\tima read <path>") + qp.gb(" - Read the text from the image"));
+				console.log(qp.yi("\tima write <input> <output> <text>") + qp.gb(" - Write the text or text file to the image"));
 				break;
 			case "version":
 				console.log(qp.yi("v" + version));

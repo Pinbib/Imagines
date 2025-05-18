@@ -1,26 +1,26 @@
 {
   "name": "imagines",
   "author": "PinBib",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "scripts": {
-    "bundle": "rollup -c rollup.config.js",
-    "pkg:win": "pkg bundle/imagines.js -t node16-win -o bin/imagines",
-    "pkg:linux": "pkg bundle/imagines.js -t node16-linux -o bin/imagines",
-    "pkg": "bun run pkg:win && bun run pkg:linux",
-    "build": "tsc && bun run bundle && bun run pkg"
+	"bundle": "rollup -c rollup.config.js",
+	"pkg:win": "pkg bundle/imagines.js -t node16-win -o bin/imagines",
+	"pkg:linux": "pkg bundle/imagines.js -t node16-linux -o bin/imagines",
+	"pkg": "bun run pkg:win && bun run pkg:linux",
+	"build": "tsc && bun run bundle && bun run pkg"
   },
   "type": "module",
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@types/node": "^22.15.17",
-    "@types/pngjs": "^6.0.5",
-    "pkg": "^5.8.1",
-    "rollup": "^4.40.2",
-    "typescript": "^5.8.3"
+	"@rollup/plugin-node-resolve": "^16.0.1",
+	"@rollup/plugin-terser": "^0.4.4",
+	"@types/node": "^22.15.17",
+	"@types/pngjs": "^6.0.5",
+	"pkg": "^5.8.1",
+	"rollup": "^4.40.2",
+	"typescript": "^5.8.3"
   },
   "dependencies": {
-    "pngjs": "^7.0.0",
-    "qp-color": "^0.0.3"
+	"pngjs": "^7.0.0",
+	"qp-color": "^0.0.3"
   }
 }
