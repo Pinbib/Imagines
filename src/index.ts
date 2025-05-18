@@ -2,6 +2,8 @@ import qp from "qp-color";
 import {version} from "../package.json";
 
 import Size from "./cli/size";
+import Read from "./cli/read";
+import Write from "./cli/write";
 
 try {
 	const args = process.argv.slice(2);
@@ -22,6 +24,10 @@ try {
 				Size(args);
 				break;
 			case "read":
+				Read(args);
+				break;
+			case "write":
+				Write(args);
 				break;
 			default:
 				throw new Error(qp.rb("Unknown command, make sure it exists use:\n\t") + qp.yi("ima help"));
