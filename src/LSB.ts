@@ -36,9 +36,7 @@ namespace ImageLSB {
 					}
 				}
 
-				this.pack().pipe(createWriteStream(output));
-
-
+				this.pack().pipe(createWriteStream(output)).on('finish', f);
 			});
 	}
 
