@@ -4,6 +4,7 @@ import {version} from "../package.json";
 import Size from "./cli/size";
 import Read from "./cli/read";
 import Write from "./cli/write";
+import Run from "./cli/run";
 
 try {
 	const args = process.argv.slice(2);
@@ -34,6 +35,9 @@ try {
 				break;
 			case "write":
 				Write(args);
+				break;
+			case "run":
+				Run(args);
 				break;
 			default:
 				throw new Error(qp.rb("Unknown command, make sure it exists use:\n\t") + qp.yi("ima help"));
