@@ -24,7 +24,7 @@ export default function Run(args: string[]): void {
 				if (matches !== null) {
 					let [_, com, __, ext]: string[] = matches;
 
-					Runner.run(com, ext, text);
+					Runner.run(com, /^\./.test(ext) ? ext : "." + ext, text);
 				} else {
 					console.log(qp.rb("No code specification found in the image."));
 				}
